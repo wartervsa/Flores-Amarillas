@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Yellow Flowers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Agrega esto antes de </body> -->
+<div class="stars"></div>
+    <script>
+        const starsContainer = document.querySelector('.stars');
+        const numStars = 100;
+        for(let i=0; i<numStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        const size = Math.random() * 2 + 2;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.opacity = Math.random() * 0.5 + 0.5;
+        star.style.background = 'radial-gradient(circle, #fffbe0 0%, #ffe066 80%, #ffd700 100%)';
+        star.style.animationDelay = `${Math.random() * 2}s`;
+        starsContainer.appendChild(star);
+}
+    </script>
+<body>
+    <div class="starry-sky-bg"></div>
+    <h1>Feliz Dia---Ten tus flores</h1>
+    <section id="flower-gallery">
+        <!-- Images of beautiful yellow flowers will be displayed here -->
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+body {
+    background: linear-gradient(135deg, #5f319c 0%, #231495de 100%);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-family: monospace;
+    text-shadow: 5px 5px 10px #222;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+    font-size: 2.5em;
+    z-index: 1;
+}
+
+#flower-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    min-height: 60vh;
+}
+
+.flower {
+    opacity: 0;
+    transform: scale(0.7) rotate(-10deg);
+    animation: appear 1s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+    filter: drop-shadow(0 0 18px #ffe066cc) drop-shadow(0 0 8px #fff20088);
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-3deg) translateY(0); }
+    50% { transform: rotate(3deg) translateY(-8px); }
+}
+
+.flower svg {
+    display: block;
+    width: 120px;
+    height: 120px;
+    animation: sway 3s ease-in-out infinite;
+}
+/* Estrellas animadas en el fondo */
+body {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stars {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}/* Estrellas animadas en el fondo */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: transparent;
+}
+
+.stars {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+.starry-sky-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 70% 20%, #3a5ba0 0%, #1a237e 60%, #0d1333 100%);
+    /* Simula el cielo profundo */
+    overflow: hidden;
+}
+
+.starry-sky-bg::before {
+    content: "";
+    position: absolute;
+    left: 60vw; top: 10vh;
+    width: 300px; height: 180px;
+    background: radial-gradient(circle at 60% 40%, #6ea8fe88 0%, #3a5ba000 80%);
+    filter: blur(12px);
+    opacity: 0.7;
+}
+.starry-sky-bg::after {
+    content: "";
+    position: absolute;
+    left: 20vw; top: 40vh;
+    width: 220px; height: 120px;
+    background: radial-gradient(circle at 40% 60%, #6ea8fe55 0%, #3a5ba000 80%);
+    filter: blur(16px);
+    opacity: 0.5;
+}
